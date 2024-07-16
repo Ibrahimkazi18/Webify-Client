@@ -1,0 +1,51 @@
+
+
+import { Timestamp } from "firebase/firestore"
+
+interface GraphData {
+    name : string,
+    total : number,
+}
+
+interface Website { 
+    id : string,
+    name : string,
+    url : string,
+    ownerId : string, 
+    owner : string,
+    price : number,
+    images : {url : string}[], 
+    isFeatured : boolean,
+    category : string;
+    createdAt : Timestamp,
+    updatedAt?: Timestamp,
+}
+
+export const getRevenueCategory = (websites :  Website[]) => { 
+
+    const categoryRevenue : { [key : string] : number } = {}
+    const categories = websites.map(item => item.category)
+
+    for(const website of websites) {
+        const category = website.category
+
+        if(category){
+            const revenueForItem = website.price;
+
+            categoryRevenue[category] = (categoryRevenue[category] || 0) + revenueForItem;
+        }
+    }
+
+    for (const category of categories) {
+        categoryRevenue[category] = categoryRevenue[category] || 0; // Set the initial value to 0 for each category
+      }
+
+    //update the grapghData
+
+    const graphData: GraphData[] = categories.map((category) => ({
+        name: category,
+        total: categoryRevenue[category] || 0,
+      }));
+    
+    return graphData;
+}
