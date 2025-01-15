@@ -58,6 +58,7 @@ While the project is mostly complete, it is still a work in progress, with more 
 
 ## **Screenshots**
 
+![image](https://github.com/user-attachments/assets/b23b3ded-f64f-4b55-95fa-86b490101b7f)
 ![image](https://github.com/user-attachments/assets/a692c055-ad97-48ba-bdc8-ce4bd7fa1b50)
 ![image](https://github.com/user-attachments/assets/3cabe65c-aec0-4e91-aec0-c97d88e4bd94)
 ![image](https://github.com/user-attachments/assets/bc5f5ecd-49b6-43d6-9682-930e10e556fe)
